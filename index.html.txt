@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merihan Ewees — Medical Content Writer & Pharmacist</title>
+<meta name="description" content="SEO-optimized medical content for pharma brands, clinics, and healthcare companies. Clinically accurate. Patient-friendly. Results-driven.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================
+     DESIGN SYSTEM
+  ============================================ */
+  :root {
+    --ink:       #0f1117;
+    --ink-soft:  #3a3d48;
+    --ink-faint: #7b7f8c;
+    --ivory:     #f8f6f1;
+    --ivory-mid: #ede9e0;
+    --ivory-dark:#ddd9ce;
+    --sage:      #5a7a68;
+    --sage-light:#8dab98;
+    --sage-pale: #ddeae3;
+    --rust:      #b85c38;
+    --rust-light:#e07d58;
+    --rust-pale: #f5e6df;
+    --gold:      #c8a96e;
+    --gold-pale: #f5f0e6;
+    --white:     #ffffff;
+
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    --r-sm: 8px;
+    --r-md: 16px;
+    --r-lg: 24px;
+    --r-xl: 40px;
+
+    --shadow-soft: 0 2px 20px rgba(15,17,23,0.06);
+    --shadow-card: 0 4px 32px rgba(15,17,23,0.09);
+    --shadow-lift: 0 12px 48px rgba(15,17,23,0.14);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--ivory);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ============================================
+     TYPOGRAPHY
+  ============================================ */
+  h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; }
+
+  .display-xl {
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+  .display-lg {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .display-md {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    line-height: 1.25;
+  }
+
+  .lead {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.75;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  .label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  em { font-style: italic; color: var(--rust); }
+
+  /* ============================================
+     LAYOUT
+  ============================================ */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+  }
+  .container--narrow { max-width: 760px; }
+  .container--wide   { max-width: 1280px; }
+
+  section { padding: clamp(4rem, 10vw, 8rem) 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+  @media (max-width: 768px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+  }
+
+  /* ============================================
+     NAV
+  ============================================ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(248,246,241,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--ivory-dark);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: var(--shadow-soft); }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--rust); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--rust); }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--white) !important;
+    padding: 0.45rem 1.1rem !important;
+    border-radius: 100px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--rust) !important; color: var(--white) !important; }
+
+  .nav-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .nav-mobile-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: flex; }
+  }
+
+  /* ============================================
+     HERO
+  ============================================ */
+  #hero {
+    padding-top: calc(64px + clamp(4rem, 10vw, 7rem));
+    padding-bottom: clamp(4rem, 10vw, 7rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(90,122,104,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 10% 80%, rgba(184,92,56,0.05) 0%, transparent 55%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--sage-pale);
+    border: 1px solid var(--sage-light);
+    color: var(--sage);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1.75rem;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--sage);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  .hero-headline { margin-bottom: 1.5rem; }
+  .hero-headline .line { display: block; }
+  .hero-headline .accent {
+    color: var(--rust);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-proof {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--ivory-dark);
+  }
+
+  .proof-item strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .proof-item span {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-ticker {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    color: var(--ivory-mid);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.6rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-track {
+    display: inline-flex;
+    gap: 3rem;
+    animation: ticker 30s linear infinite;
+  }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker-dot { color: var(--rust); margin: 0 0.3rem; }
+
+  /* ============================================
+     BUTTONS
+  ============================================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 100px;
+    padding: 0.75rem 1.75rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.22s;
+    letter-spacing: 0.01em;
+  }
+  .btn-primary {
+    background: var(--rust);
+    color: var(--white);
+    box-shadow: 0 4px 20px rgba(184,92,56,0.3);
+  }
+  .btn-primary:hover {
+    background: #9f4e2e;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 28px rgba(184,92,56,0.4);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ivory-dark);
+  }
+  .btn-secondary:hover {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--white);
+  }
+  .btn-sage {
+    background: var(--sage);
+    color: var(--white);
+    box-shadow: 0 4px 20px rgba(90,122,104,0.25);
+  }
+  .btn-sage:hover {
+    background: #4a6856;
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--rust);
+    padding: 0;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+  }
+  .btn-ghost::after { content: ' →'; }
+  .btn-ghost:hover { gap: 0.8rem; }
+
+  /* ============================================
+     SECTION HEADERS
+  ============================================ */
+  .section-header {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  .section-header .label { margin-bottom: 0.75rem; }
+  .section-header h2 { margin-bottom: 1rem; }
+  .section-header p {
+    max-width: 540px;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .section-header.center { text-align: center; }
+  .section-header.center p { margin: 0 auto; }
+
+  /* ============================================
+     DIVIDER
+  ============================================ */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--ivory-dark);
+  }
+  .divider-ornament {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--ivory-dark);
+    font-size: 1.2rem;
+    letter-spacing: 0.4rem;
+  }
+
+  /* ============================================
+     ABOUT
+  ============================================ */
+  #about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(3rem, 8vw, 6rem);
+    align-items: start;
+  }
+
+  .about-sticky { position: sticky; top: 88px; }
+
+  .about-visual {
+    background: linear-gradient(135deg, var(--sage-pale) 0%, var(--ivory-mid) 100%);
+    border-radius: var(--r-lg);
+    padding: 2.5rem;
+    border: 1px solid var(--ivory-dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-visual::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 120px; height: 120px;
+    background: var(--rust-pale);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  .about-initials {
+    width: 72px; height: 72px;
+    background: var(--ink);
+    color: var(--white);
+    border-radius: var(--r-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .about-role {
+    font-size: 0.82rem;
+    color: var(--sage);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .stat-pill {
+    background: var(--white);
+    border: 1px solid var(--ivory-dark);
+    border-radius: var(--r-sm);
+    padding: 0.75rem;
+    text-align: center;
+  }
+  .stat-pill strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--rust);
+  }
+  .stat-pill small {
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+
+  .about-content h2 { margin-bottom: 1.5rem; }
+  .about-content p { color: var(--ink-soft); margin-bottom: 1.25rem; }
+  .about-content p:last-of-type { margin-bottom: 2rem; }
+
+  .trust-note {
+    background: var(--gold-pale);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--r-sm) var(--r-sm) 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin-top: 2rem;
+  }
+  .trust-note strong { color: var(--ink); }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-sticky { position: static; }
+  }
+
+  /* ============================================
+     PILLARS
+  ============================================ */
+  #pillars {
+    background: var(--ink);
+    color: var(--ivory);
+    padding: clamp(3rem, 7vw, 5.5rem) 0;
+  }
+  #pillars .label { color: var(--sage-light); }
+  #pillars .display-lg { color: var(--ivory); margin-bottom: 0.5rem; }
+  #pillars .display-lg em { color: var(--rust-light); }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pillar-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--r-md);
+    padding: 1.75rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .pillar-card:hover {
+    border-color: rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.07);
+  }
+
+  .pillar-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .pillar-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--ivory);
+    margin-bottom: 0.5rem;
+  }
+  .pillar-card p {
+    font-size: 0.85rem;
+    color: rgba(237,233,224,0.6);
+    line-height: 1.65;
+  }
+
+  /* ============================================
+     SERVICES
+  ============================================ */
+  #services { background: var(--ivory); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--ivory-dark);
+    border-radius: var(--r-lg);
+    padding: 2rem;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--rust), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-card.featured {
+    background: var(--ink);
+    color: var(--ivory);
+    border-color: var(--ink);
+  }
+  .service-card.featured h3 { color: var(--ivory); }
+  .service-card.featured p { color: rgba(237,233,224,0.7); }
+  .service-card.featured .service-price { color: var(--gold); }
+  .service-card.featured .service-badge { background: var(--rust); color: var(--white); }
+
+  .service-icon {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--ink);
+  }
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+  .service-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: var(--ivory);
+    color: var(--ink-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    border: 1px solid var(--ivory-dark);
+  }
+  .service-card.featured .service-tag {
+    background: rgba(255,255,255,0.08);
+    color: rgba(237,233,224,0.7);
+    border-color: rgba(255,255,255,0.12);
+  }
+  .service-price {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--rust);
+    font-weight: 400;
+  }
+  .service-badge {
+    position: absolute;
+    top: 1.25rem; right: 1.25rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--rust-pale);
+    color: var(--rust);
+    padding: 0.25rem 0.65rem;
+    border-radius: 100px;
+  }
+
+  /* ============================================
+     WORK / SAMPLES
+  ============================================ */
+  #work { background: var(--white); }
+
+  .work-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .work-tab {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--ivory-dark);
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .work-tab:hover, .work-tab.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--white);
+  }
+
+  .case-studies { display: flex; flex-direction: column; gap: 2rem; }
+
+  .case-card {
+    background: var(--ivory);
+    border: 1px solid var(--ivory-dark);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+  .case-card:hover { box-shadow: var(--shadow-card); }
+
+  .case-header {
+    padding: 1.75rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--ivory-dark);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: var(--white);
+  }
+  .case-number {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.4rem;
+  }
+  .case-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .case-meta {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+  .case-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: flex-start; }
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 100px;
+    background: var(--ivory-mid);
+    color: var(--ink-soft);
+    border: 1px solid var(--ivory-dark);
+  }
+  .tag.sage { background: var(--sage-pale); color: var(--sage); border-color: rgba(90,122,104,0.2); }
+  .tag.rust { background: var(--rust-pale); color: var(--rust); border-color: rgba(184,92,56,0.2); }
+
+  .case-body { padding: 1.75rem 2rem; }
+
+  .case-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  .fact {
+    background: var(--white);
+    border-radius: var(--r-sm);
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--ivory-dark);
+  }
+  .fact-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.3rem;
+  }
+  .fact-value {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .case-excerpt {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    border-left: 3px solid var(--ivory-dark);
+    padding-left: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .case-card:hover .case-excerpt { border-color: var(--rust); }
+
+  .case-outcome {
+    background: var(--sage-pale);
+    border-radius: var(--r-sm);
+    padding: 1rem 1.25rem;
+    font-size: 0.86rem;
+    color: var(--sage);
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .case-outcome::before { content: '✓'; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  /* ============================================
+     CONFIDENCE STRIP
+  ============================================ */
+  #confidence {
+    background: var(--rust-pale);
+    padding: clamp(2.5rem, 5vw, 4rem) 0;
+    border-top: 1px solid rgba(184,92,56,0.12);
+    border-bottom: 1px solid rgba(184,92,56,0.12);
+  }
+
+  .conf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+  .conf-item { }
+  .conf-item .icon { font-size: 1.6rem; margin-bottom: 0.5rem; display: block; }
+  .conf-item strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .conf-item p {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* ============================================
+     TESTIMONIAL PLACEHOLDER
+  ============================================ */
+  #social-proof { background: var(--ivory); }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--ivory-dark);
+    border-radius: var(--r-lg);
+    padding: 1.75rem;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--ivory-mid);
+    position: absolute;
+    top: 0.5rem; left: 1.5rem;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    padding-top: 1.5rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    border-top: 1px solid var(--ivory-dark);
+    padding-top: 1rem;
+  }
+  .author-avatar {
+    width: 38px; height: 38px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .author-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--ink);
+    display: block;
+    line-height: 1.3;
+  }
+  .author-role {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+  }
+  .testimonial-placeholder {
+    background: var(--ivory);
+    border: 1.5px dashed var(--ivory-dark);
+    border-radius: var(--r-lg);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .testimonial-placeholder p {
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+  .testimonial-placeholder strong {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  /* ============================================
+     BACKGROUND / CREDENTIALS
+  ============================================ */
+  #credentials { background: var(--white); }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--sage), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 5px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--sage);
+    transform: translateX(-4px);
+  }
+
+  .timeline-year {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.2rem;
+  }
+  .timeline-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.1rem;
+  }
+  .timeline-org {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+
+  .skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+  }
+  .skill-tag {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    background: var(--ivory);
+    color: var(--ink-soft);
+    border: 1px solid var(--ivory-dark);
+    transition: all 0.2s;
+  }
+  .skill-tag:hover { background: var(--sage-pale); color: var(--sage); border-color: var(--sage-light); }
+
+  /* ============================================
+     CTA
+  ============================================ */
+  #cta {
+    background: var(--ink);
+    color: var(--ivory);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #cta::before {
+    content: '';
+    position: absolute;
+    top: -60%; left: -20%;
+    width: 80vw; height: 80vw;
+    max-width: 700px; max-height: 700px;
+    background: radial-gradient(circle, rgba(90,122,104,0.15) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  #cta::after {
+    content: '';
+    position: absolute;
+    bottom: -40%; right: -10%;
+    width: 60vw; height: 60vw;
+    max-width: 500px; max-height: 500px;
+    background: radial-gradient(circle, rgba(184,92,56,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .cta-inner { position: relative; z-index: 1; }
+  #cta .label { color: var(--sage-light); }
+  #cta .display-lg { color: var(--white); margin: 0.75rem 0 1.25rem; }
+  #cta .display-lg em { color: var(--rust-light); }
+  #cta .lead { color: rgba(237,233,224,0.65); max-width: 520px; margin: 0 auto 2.5rem; }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-cta-primary {
+    background: var(--rust);
+    color: var(--white);
+    box-shadow: 0 8px 32px rgba(184,92,56,0.4);
+    font-size: 1rem;
+    padding: 0.9rem 2.25rem;
+  }
+  .btn-cta-primary:hover {
+    background: #9f4e2e;
+    box-shadow: 0 12px 40px rgba(184,92,56,0.5);
+    transform: translateY(-2px);
+  }
+  .btn-cta-outline {
+    background: transparent;
+    color: var(--ivory);
+    border: 1.5px solid rgba(237,233,224,0.25);
+    font-size: 1rem;
+    padding: 0.9rem 2.25rem;
+  }
+  .btn-cta-outline:hover {
+    border-color: rgba(237,233,224,0.6);
+    background: rgba(255,255,255,0.05);
+  }
+
+  .cta-process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+  }
+  .process-step { }
+  .step-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust-light);
+    margin-bottom: 0.35rem;
+  }
+  .process-step h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--ivory);
+    margin-bottom: 0.3rem;
+  }
+  .process-step p {
+    font-size: 0.8rem;
+    color: rgba(237,233,224,0.5);
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     FOOTER
+  ============================================ */
+  footer {
+    background: #080a0d;
+    color: rgba(237,233,224,0.4);
+    padding: 2rem 0;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  footer a { color: rgba(237,233,224,0.5); text-decoration: none; }
+  footer a:hover { color: var(--rust-light); }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  /* ============================================
+     SCROLL ANIMATIONS
+  ============================================ */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
+
+  /* ============================================
+     ARABIC TYPOGRAPHY
+  ============================================ */
+  .arabic-title {
+    font-family: 'Noto Naskh Arabic', 'Geeza Pro', 'Traditional Arabic', serif;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    font-weight: 500;
+    unicode-bidi: embed;
+  }
+  .arabic-title bdi[lang="en"] {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--rust);
+    unicode-bidi: isolate;
+    direction: ltr;
+    display: inline-block;
+    vertical-align: baseline;
+  }
+  .arabic-excerpt {
+    font-family: 'Noto Naskh Arabic', 'Geeza Pro', 'Traditional Arabic', serif;
+    font-size: 1rem;
+    line-height: 2.1;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0;
+    border-left: none !important;
+    border-right: 3px solid var(--ivory-dark);
+    padding-left: 0 !important;
+    padding-right: 1.25rem;
+    unicode-bidi: embed;
+  }
+  .case-card:hover .arabic-excerpt {
+    border-right-color: var(--rust);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Merihan <span>Ewees</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#credentials">Background</a></li>
+      <li><a href="#cta" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" aria-label="Menu" onclick="this.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+
+    <div class="hero-badge fade-up">Available for freelance projects</div>
+
+    <h1 class="display-xl hero-headline fade-up delay-1">
+      <span class="line">SEO medical content</span>
+      <span class="line">your patients read —</span>
+      <span class="line">and your <em>brand ranks for.</em></span>
+    </h1>
+
+    <p class="lead hero-sub fade-up delay-2">
+      Your audience won't trust content that feels generic — and Google won't rank it either. I'm a pharmacist-turned-medical-writer who helps healthcare brands, pharma companies, and clinics publish content that is clinically accurate, genuinely readable, and built to perform in search. In English and Arabic.
+    </p>
+
+    <div class="hero-actions fade-up delay-3">
+      <a href="mailto:merihanewees@gmail.com" class="btn btn-primary">Start Your Project →</a>
+      <a href="#work" class="btn btn-secondary">See How I Work</a>
+    </div>
+
+    <div class="hero-client-types fade-up delay-4">
+      <span class="client-type-label">I write for:</span>
+      <span class="client-chip">Pharma Brands</span>
+      <span class="client-chip">Healthcare Clinics</span>
+      <span class="client-chip">Medical Device Companies</span>
+      <span class="client-chip">Health &amp; Wellness Platforms</span>
+    </div>
+
+    <div class="hero-proof fade-up" style="transition-delay:0.5s;">
+      <div class="proof-item">
+        <strong>8+</strong>
+        <span>Published Articles</span>
+      </div>
+      <div class="proof-item">
+        <strong>3</strong>
+        <span>Client Industries</span>
+      </div>
+      <div class="proof-item">
+        <strong>2</strong>
+        <span>Languages</span>
+      </div>
+      <div class="proof-item">
+        <strong>Rx</strong>
+        <span>Pharmacy Degree</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker">
+      <span>Health Blog Articles</span><span class="ticker-dot">◆</span>
+      <span>Arabic Medical SEO</span><span class="ticker-dot">◆</span>
+      <span>Pharma &amp; OTC Copy</span><span class="ticker-dot">◆</span>
+      <span>HCP Communications</span><span class="ticker-dot">◆</span>
+      <span>Patient Education</span><span class="ticker-dot">◆</span>
+      <span>Wound Care Content</span><span class="ticker-dot">◆</span>
+      <span>Clinical Accuracy</span><span class="ticker-dot">◆</span>
+      <span>Brand Voice Matching</span><span class="ticker-dot">◆</span>
+      <span>Health Blog Articles</span><span class="ticker-dot">◆</span>
+      <span>Arabic Medical SEO</span><span class="ticker-dot">◆</span>
+      <span>Pharma &amp; OTC Copy</span><span class="ticker-dot">◆</span>
+      <span>HCP Communications</span><span class="ticker-dot">◆</span>
+      <span>Patient Education</span><span class="ticker-dot">◆</span>
+      <span>Wound Care Content</span><span class="ticker-dot">◆</span>
+      <span>Clinical Accuracy</span><span class="ticker-dot">◆</span>
+      <span>Brand Voice Matching</span><span class="ticker-dot">◆</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-sticky">
+        <div class="about-visual fade-up">
+          <div class="about-initials">ME</div>
+          <div class="about-name">Merihan Ewees</div>
+          <div class="about-role">Medical Writer · Pharmacist</div>
+          <p style="font-size:0.85rem; color:var(--ink-soft); line-height:1.6; position:relative; z-index:1;">
+            Pharmacy graduate with hands-on clinical experience in hospital pharmacy, patient counselling, and clinical toxicology — now writing content that healthcare brands can trust and patients actually understand.
+          </p>
+          <div class="about-stats">
+            <div class="stat-pill"><strong>8+</strong><small>Articles</small></div>
+            <div class="stat-pill"><strong>2</strong><small>Languages</small></div>
+            <div class="stat-pill"><strong>UAE</strong><small>Clients</small></div>
+            <div class="stat-pill"><strong>Rx</strong><small>Licensed</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="label fade-up">Why it matters — for you</div>
+        <h2 class="display-lg fade-up delay-1">
+          Your content problem<br>isn't research. <em>It's trust.</em>
+        </h2>
+
+        <p class="fade-up delay-2">
+          Most healthcare brands struggle with the same gap: content that's either too clinical to hold a patient's attention, or too vague to be trusted by anyone with medical knowledge. That gap costs you rankings, credibility, and conversions.
+        </p>
+        <p class="fade-up delay-2">
+          That's exactly where I come in. As a pharmacy graduate with hands-on hospital and clinical experience, I understand medicine from the inside — which means I can translate complex health information into content that reads naturally, holds up clinically, and is structured to rank in search.
+        </p>
+        <p class="fade-up delay-3">
+          You get content that doesn't need a second pass from your medical team to fix accuracy issues, doesn't need your SEO team to add structure it should have had from the start, and doesn't sound like every other health article your competitors publish.
+        </p>
+
+        <div class="about-outcomes fade-up delay-3">
+          <div class="outcome-row">
+            <span class="outcome-check">✓</span>
+            <span><strong>Your patients understand their condition</strong> — and trust your brand because of it</span>
+          </div>
+          <div class="outcome-row">
+            <span class="outcome-check">✓</span>
+            <span><strong>Your articles rank in search</strong> — written with target keywords woven in naturally, not forced</span>
+          </div>
+          <div class="outcome-row">
+            <span class="outcome-check">✓</span>
+            <span><strong>Your team spends less time editing</strong> — deliverables are fact-checked and publish-ready</span>
+          </div>
+          <div class="outcome-row">
+            <span class="outcome-check">✓</span>
+            <span><strong>Your Arabic audience gets real content</strong> — written fresh for them, not translated from English</span>
+          </div>
+        </div>
+
+        <div class="trust-note fade-up delay-4">
+          <strong>On confidentiality:</strong> Most client work is covered by NDA and cannot be displayed publicly. Every sample in this portfolio reflects the actual quality and depth of what I deliver — either published work or pieces created to demonstrate real-world content types. I'm happy to share more on request.
+        </div>
+
+        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;" class="fade-up delay-4">
+          <a href="mailto:merihanewees@gmail.com" class="btn btn-primary">Start Your Project →</a>
+          <a href="#services" class="btn btn-secondary">See What I Offer</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHO I HELP
+============================================================ -->
+<section id="who" style="background:var(--ink); color:var(--ivory); padding:clamp(3rem,7vw,5.5rem) 0;">
+  <div class="container">
+    <div class="section-header fade-up" style="margin-bottom:clamp(2rem,4vw,3rem);">
+      <div class="label" style="color:var(--sage-light);">Is this for you?</div>
+      <h2 class="display-lg" style="color:var(--ivory);">If you're in healthcare, <em>I can help.</em></h2>
+      <p style="color:rgba(237,233,224,0.6); max-width:520px;">Here's exactly who I work with — and the specific content problem I solve for each.</p>
+    </div>
+    <div class="who-grid">
+
+      <div class="who-card fade-up delay-1">
+        <div class="who-icon">💊</div>
+        <div class="who-client">Pharma &amp; OTC Brands</div>
+        <div class="who-problem">You need branded content that connects with patients without making unverified claims — and SEO articles that rank for high-intent health queries.</div>
+        <div class="who-deliverable">Blog articles · Product content · Patient guides</div>
+      </div>
+
+      <div class="who-card fade-up delay-2">
+        <div class="who-icon">🏥</div>
+        <div class="who-client">Clinics &amp; Healthcare Groups</div>
+        <div class="who-problem">You need content that builds authority in search and helps patients make informed decisions about which care option is right for them — before they even call.</div>
+        <div class="who-deliverable">SEO blog posts · Patient decision content · Arabic articles</div>
+      </div>
+
+      <div class="who-card fade-up delay-3">
+        <div class="who-icon">🩹</div>
+        <div class="who-client">Medical Device Companies</div>
+        <div class="who-problem">You need patients to understand how your product works and why they need it — without reading like an instruction manual or making them more anxious than they already are.</div>
+        <div class="who-deliverable">Buyer's guides · Usage instructions · Clinical education</div>
+      </div>
+
+      <div class="who-card fade-up delay-1">
+        <div class="who-icon">🌐</div>
+        <div class="who-client">MENA &amp; Arabic-Market Brands</div>
+        <div class="who-problem">You need health content for Arabic-speaking audiences that performs in Arabic search — not a translated version of your English page that reads awkwardly and ranks poorly.</div>
+        <div class="who-deliverable">Native Arabic SEO · Blog posts · Social content</div>
+      </div>
+
+      <div class="who-card fade-up delay-2">
+        <div class="who-icon">📢</div>
+        <div class="who-client">Health &amp; Wellness Platforms</div>
+        <div class="who-problem">You need a consistent stream of credible, readable health articles that keep your audience engaged and position your platform as a trustworthy source — not just another content farm.</div>
+        <div class="who-deliverable">Long-form articles · Research summaries · Education content</div>
+      </div>
+
+      <div class="who-card who-card--cta fade-up delay-3">
+        <div class="who-icon">✉️</div>
+        <div class="who-client">Not sure if I'm the right fit?</div>
+        <div class="who-problem" style="color:rgba(237,233,224,0.7);">Send me a quick note about your project. I'll tell you honestly whether I can help — and if not, I'll point you in the right direction.</div>
+        <a href="mailto:merihanewees@gmail.com" class="btn btn-primary" style="margin-top:1.25rem; align-self:flex-start;">Email Me →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="label">What you can hire me for</div>
+      <h2 class="display-lg">Six services. <em>One goal:</em><br>content that works.</h2>
+      <p>Each service below is a specific, hireable offer — not a vague category. If you know what you need, pick it. If you're not sure, <a href="mailto:merihanewees@gmail.com" style="color:var(--rust); text-decoration:none; font-weight:600;">email me</a> and we'll figure it out together.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card featured fade-up delay-1">
+        <span class="service-badge">Most Requested</span>
+        <span class="service-icon">📝</span>
+        <h3>SEO Health Blog Articles</h3>
+        <p>For brands that need to rank for health-related keywords and turn that traffic into trust. I research your target queries, write to the search intent, and structure each article so it's readable on mobile and credible to anyone who knows medicine.</p>
+        <div class="service-what-you-get">
+          <div class="swg-label">What you get</div>
+          <div class="swg-item">✓ Keyword-targeted, structured article (800–1500 words)</div>
+          <div class="swg-item">✓ H1/H2 structure optimised for featured snippets</div>
+          <div class="swg-item">✓ Clinically verified claims with source references</div>
+          <div class="swg-item">✓ One revision round included</div>
+        </div>
+        <div class="service-price">Starting from $25/article</div>
+      </div>
+
+      <div class="service-card fade-up delay-2">
+        <span class="service-icon">🌐</span>
+        <h3>Arabic Medical Content</h3>
+        <p>For brands targeting the MENA market who need content that actually performs in Arabic search — not a translated version of their English page. I write Arabic from scratch, in the register your audience uses, with keywords that sit naturally in the text.</p>
+        <div class="service-what-you-get">
+          <div class="swg-label">What you get</div>
+          <div class="swg-item">✓ Original Arabic article (not a translation)</div>
+          <div class="swg-item">✓ Arabic SEO keywords researched &amp; integrated</div>
+          <div class="swg-item">✓ Adapted for UAE/MENA patient vocabulary</div>
+        </div>
+        <div class="service-price">Starting from $20/article</div>
+      </div>
+
+      <div class="service-card fade-up delay-3">
+        <span class="service-icon">💊</span>
+        <h3>Pharma &amp; OTC Brand Content</h3>
+        <p>For pharmaceutical brands that need patient-facing articles that support a product without overpromising. I understand how OTC claims need to be framed — and I write copy that's conversion-aware without being reckless.</p>
+        <div class="service-what-you-get">
+          <div class="swg-label">What you get</div>
+          <div class="swg-item">✓ Branded article or product piece</div>
+          <div class="swg-item">✓ Evidence-backed, claim-safe language</div>
+          <div class="swg-item">✓ Written for patient-level readability</div>
+        </div>
+        <div class="service-price">Starting from $30/article</div>
+      </div>
+
+      <div class="service-card fade-up delay-1">
+        <span class="service-icon">🩺</span>
+        <h3>HCP Communications</h3>
+        <p>For brands that need to communicate with doctors, pharmacists, or other healthcare professionals — in a tone that respects their expertise. Portal content, clinical summaries, and HCP emails written at the right level of depth.</p>
+        <div class="service-what-you-get">
+          <div class="swg-label">What you get</div>
+          <div class="swg-item">✓ HCP email, portal article, or clinical summary</div>
+          <div class="swg-item">✓ Physician-appropriate tone and vocabulary</div>
+          <div class="swg-item">✓ Evidence-referenced where relevant</div>
+        </div>
+        <div class="service-price">Starting from $35/piece</div>
+      </div>
+
+      <div class="service-card fade-up delay-2">
+        <span class="service-icon">📋</span>
+        <h3>Patient Education Materials</h3>
+        <p>For clinics and device companies that need patients to actually understand and follow through — on their diagnosis, their medication, their post-op care. Written in plain language, without being condescending or alarming.</p>
+        <div class="service-what-you-get">
+          <div class="swg-label">What you get</div>
+          <div class="swg-item">✓ Leaflet, guide, or instructional content</div>
+          <div class="swg-item">✓ Plain language, scannable structure</div>
+          <div class="swg-item">✓ Clinically accurate &amp; patient-appropriate</div>
+        </div>
+        <div class="service-price">Starting from $20/piece</div>
+      </div>
+
+      <div class="service-card fade-up delay-3">
+        <span class="service-icon">🔍</span>
+        <h3>Medical Research Summaries</h3>
+        <p>For agencies, publishers, and medical education platforms that need complex studies or literature distilled into something usable — without losing accuracy or dumbing it down beyond recognition.</p>
+        <div class="service-what-you-get">
+          <div class="swg-label">What you get</div>
+          <div class="swg-item">✓ Structured study summary or evidence brief</div>
+          <div class="swg-item">✓ Key findings extracted and contextualised</div>
+          <div class="swg-item">✓ Written for your target audience's level</div>
+        </div>
+        <div class="service-price">Starting from $40/summary</div>
+      </div>
+
+    </div>
+
+    <div class="services-footer fade-up">
+      <div class="services-footer-text">
+        <strong>Not sure which service fits your project?</strong>
+        <span>Send me a brief description of what you need. I'll tell you exactly what I'd recommend and give you a quote within 24 hours.</span>
+      </div>
+      <a href="mailto:merihanewees@gmail.com" class="btn btn-primary">Get a Free Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WORK / CASE STUDIES
+============================================================ -->
+<section id="work">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="label">Real work, real context</div>
+      <h2 class="display-lg">Not just samples —<br><em>problems I solved.</em></h2>
+      <p>Every piece below started with a specific client problem. I've included the brief, the approach, and what the content was designed to achieve — so you can judge the thinking, not just the writing.</p>
+    </div>
+
+    <div class="case-studies">
+
+      <!-- Case Study 1 — Pharma Hero -->
+      <div class="case-card fade-up">
+        <div class="case-header">
+          <div>
+            <div class="case-number">Case Study 01 — Featured</div>
+            <div class="case-title">Migraine vs. Headache: Helping OTC Buyers Find the Right Relief</div>
+            <div class="case-meta">Pharma OTC Brand · UAE · Branded Blog Article · English</div>
+          </div>
+          <div class="case-tags">
+            <span class="tag rust">Pharma</span>
+            <span class="tag">SEO</span>
+            <span class="tag">Branded</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem-bar">
+            <span class="cpb-label">Client problem:</span> Needed a long-form article that ranked for "migraine vs headache" and naturally led readers toward an ibuprofen 400mg OTC product — without reading like an ad.
+          </div>
+          <div class="case-facts">
+            <div class="fact"><div class="fact-label">Goal</div><div class="fact-value">Drive OTC product consideration</div></div>
+            <div class="fact"><div class="fact-label">Audience</div><div class="fact-value">UAE adults, self-medicating</div></div>
+            <div class="fact"><div class="fact-label">Format</div><div class="fact-value">Long-form branded blog</div></div>
+            <div class="fact"><div class="fact-label">Target Keywords</div><div class="fact-value">Migraine vs headache, ibuprofen 400mg</div></div>
+          </div>
+          <blockquote class="case-excerpt">
+            Is it just a headache or something more? When a sudden pounding starts and stops you in your tracks, it's natural to wonder. Understanding the difference is key to finding fast, effective relief — especially when your day can't slow down.
+          </blockquote>
+          <div class="case-outcome">
+            <div class="co-title">What this content does for the brand</div>
+            Built clinical credibility first by explaining migraine pathophysiology in plain language, then introduced ibuprofen 400mg as the evidence-backed solution — referenced against Cochrane-level data. The product feels like the logical conclusion, not a pitch. Result: content that earns reader trust and supports purchase intent in the same piece.
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 2 — Medical Device -->
+      <div class="case-card fade-up delay-1">
+        <div class="case-header">
+          <div>
+            <div class="case-number">Case Study 02</div>
+            <div class="case-title">Selecting the Right Silicone Scar Sheet — Turning Clinical Evidence into a Buyer Decision</div>
+            <div class="case-meta">Medical Device Brand · UAE · Buyer's Guide + Patient Education · English</div>
+          </div>
+          <div class="case-tags">
+            <span class="tag sage">Medical Device</span>
+            <span class="tag">Wound Care</span>
+            <span class="tag">Product</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem-bar">
+            <span class="cpb-label">Client problem:</span> Post-surgical patients were uncertain about scar care and often defaulted to doing nothing. The brand needed content that educated them on silicone sheeting and moved them toward purchasing with confidence.
+          </div>
+          <div class="case-facts">
+            <div class="fact"><div class="fact-label">Goal</div><div class="fact-value">Educate &amp; convert post-surgical patients</div></div>
+            <div class="fact"><div class="fact-label">Audience</div><div class="fact-value">Post-op patients, UAE</div></div>
+            <div class="fact"><div class="fact-label">Format</div><div class="fact-value">Buyer's guide + step-by-step guide</div></div>
+            <div class="fact"><div class="fact-label">Challenge</div><div class="fact-value">High anxiety, low product awareness</div></div>
+          </div>
+          <blockquote class="case-excerpt">
+            You didn't go through surgery just to be left with a scar you want to hide. Medical-grade silicone scar sheets are the gold standard in modern scar care — clinically proven for both new and existing scars. You don't have to wait and see.
+          </blockquote>
+          <div class="case-outcome">
+            <div class="co-title">What this content does for the brand</div>
+            Opens on the patient's emotional reality (post-surgical anxiety, visibility concerns), establishes clinical credibility for silicone sheeting through evidence-backed language, then walks readers through a practical selection framework. Designed to reduce consideration-stage abandonment and increase confidence at the point of purchase — without a single aggressive sales claim.
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 3 — Healthcare / UAE -->
+      <div class="case-card fade-up delay-2">
+        <div class="case-header">
+          <div>
+            <div class="case-number">Case Study 03</div>
+            <div class="case-title">Medical Centre vs Hospital — Redirecting Patients to the Right Level of Care</div>
+            <div class="case-meta">UAE Healthcare Client · SEO Blog Article · Patient Decision · English</div>
+          </div>
+          <div class="case-tags">
+            <span class="tag">Healthcare</span>
+            <span class="tag">UAE</span>
+            <span class="tag sage">SEO</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem-bar">
+            <span class="cpb-label">Client problem:</span> Patients defaulted to hospital ERs for conditions that could be handled at a medical centre. The brand needed content that reframed patient decision-making and drove footfall to their clinic network.
+          </div>
+          <div class="case-facts">
+            <div class="fact"><div class="fact-label">Goal</div><div class="fact-value">Redirect patients from ER to medical centres</div></div>
+            <div class="fact"><div class="fact-label">Audience</div><div class="fact-value">UAE residents, general public</div></div>
+            <div class="fact"><div class="fact-label">Format</div><div class="fact-value">SEO blog, patient-facing</div></div>
+            <div class="fact"><div class="fact-label">Key Message</div><div class="fact-value">Right care, right place, right time</div></div>
+          </div>
+          <blockquote class="case-excerpt">
+            The difference between a medical centre and a hospital isn't about quality of care — it's about the nature of the condition. For issues that don't require admission or major surgery, a well-equipped medical centre is often the fastest, most appropriate option.
+          </blockquote>
+          <div class="case-outcome">
+            <div class="co-title">What this content does for the brand</div>
+            Reframes the patient's default assumption (hospital = safer = better) through reassurance and practical comparison. The brand's continuity-of-care system — unified electronic records across branches — is woven in as a concrete trust signal rather than listed as a feature. Content structured to rank for "medical centre vs hospital UAE" and similar decision-stage queries.
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 4 — Arabic -->
+      <div class="case-card fade-up">
+        <div class="case-header">
+          <div>
+            <div class="case-number">Case Study 04 — Arabic / العربي</div>
+            <div class="case-title arabic-title" lang="ar" dir="rtl">
+              مركز طبي في مطار دبي: محتوى <bdi lang="en" dir="ltr">SEO</bdi> عربي يستهدف مسافرين في لحظة الحاجة
+            </div>
+            <div class="case-meta">UAE Healthcare Client · Arabic SEO Blog · Traveller Audience</div>
+          </div>
+          <div class="case-tags">
+            <span class="tag">Arabic</span>
+            <span class="tag sage">SEO</span>
+            <span class="tag">Travel Health</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-problem-bar">
+            <span class="cpb-label">Client problem:</span> An in-airport medical clinic needed Arabic SEO content targeting travellers who might need urgent care at Dubai International — a high-intent audience with almost no time to search or decide.
+          </div>
+          <div class="case-facts">
+            <div class="fact"><div class="fact-label">Goal</div><div class="fact-value">Drive awareness for in-airport clinic</div></div>
+            <div class="fact"><div class="fact-label">Audience</div><div class="fact-value">Arabic-speaking travellers, Dubai</div></div>
+            <div class="fact"><div class="fact-label">Format</div><div class="fact-value">Arabic SEO blog, native copy</div></div>
+            <div class="fact"><div class="fact-label">Approach</div><div class="fact-value">Urgency + convenience framing</div></div>
+          </div>
+          <blockquote class="case-excerpt arabic-excerpt" lang="ar" dir="rtl">
+            المسافر لا يملك وقتاً للبحث عن مركز طبي قريب — رحلته لا تنتظر. المركز الطبي داخل مبنى الركاب 3 يُغلق هذه الفجوة: رعاية طبية متكاملة في الموقع، دون الحاجة إلى مغادرة المطار.
+          </blockquote>
+          <div class="case-outcome">
+            <div class="co-title">What this content does for the brand</div>
+            Written entirely in native Arabic — not translated or adapted from English — so the copy sounds natural to Arabic-speaking readers and the keywords rank correctly in Arabic search. The piece frames the clinic's location as the answer to the traveller's most urgent anxiety: needing care without missing a connection. Arabic content written fresh for the audience's actual search intent.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONFIDENCE STRIP
+============================================================ -->
+<section id="confidence">
+  <div class="container">
+    <div class="conf-grid">
+      <div class="conf-item fade-up">
+        <span class="icon">🔐</span>
+        <strong>NDAs Respected</strong>
+        <p>All confidential client work is handled under non-disclosure. I'll discuss scope and samples on request.</p>
+      </div>
+      <div class="conf-item fade-up delay-1">
+        <span class="icon">💬</span>
+        <strong>Arabic &amp; English</strong>
+        <p>Native in both. Not translated, not adapted. Original content written for each language's audience.</p>
+      </div>
+      <div class="conf-item fade-up delay-2">
+        <span class="icon">📊</span>
+        <strong>Evidence-Backed</strong>
+        <p>Clinical claims sourced from guidelines, Cochrane reviews, and peer-reviewed literature. Every time.</p>
+      </div>
+      <div class="conf-item fade-up delay-3">
+        <span class="icon">🚀</span>
+        <strong>Ready to Publish</strong>
+        <p>Deliverables are self-audited before submission. You receive content that's ready for your editorial review — not a rough draft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOCIAL PROOF / TESTIMONIALS
+============================================================ -->
+<section id="social-proof">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="label">Client feedback</div>
+      <h2 class="display-lg">What clients <em>say.</em></h2>
+    </div>
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card fade-up delay-1">
+        <p class="testimonial-text">
+          Merihan consistently delivers content that requires minimal editing. The clinical accuracy is exactly what we need for our pharma brand — and she understands how to write for patients without talking down to them.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">C</div>
+          <div>
+            <span class="author-name">Content Manager</span>
+            <span class="author-role">OTC Pharmaceutical Brand · UAE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up delay-2">
+        <p class="testimonial-text">
+          The Arabic content she produced was genuinely written for our audience — it didn't feel like a translation at all. SEO performance improved within the first month. We'll be working with her again.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">D</div>
+          <div>
+            <span class="author-name">Digital Marketing Lead</span>
+            <span class="author-role">Healthcare Group · Dubai</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-placeholder fade-up delay-3">
+        <span style="font-size:1.5rem;">✦</span>
+        <strong>More testimonials coming</strong>
+        <p>I'm actively collecting client references. Reach out and I'll connect you with a client directly if needed.</p>
+        <a href="#cta" class="btn-ghost" style="margin-top:0.5rem;">Work with me first</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BACKGROUND
+============================================================ -->
+<section id="credentials">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="label">My background</div>
+      <h2 class="display-lg">Trained in clinics. <em>Built for content.</em></h2>
+      <p>Clinical experience is what separates my writing from a well-researched article. I've been on the inside — and that shows in the work.</p>
+    </div>
+
+    <div class="grid-2" style="gap:clamp(3rem,7vw,5rem); align-items:start;">
+      <div>
+        <div class="label" style="margin-bottom:1.5rem;" class="fade-up">Experience</div>
+        <div class="timeline fade-up">
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">B.Pharm — Pharmaceutical Manufacturing</div>
+            <div class="timeline-org">Pharos University, Alexandria</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">Patient Experience &amp; Education Specialist</div>
+            <div class="timeline-org">Andalusia Roushdy Clinics</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">Clinical Toxicology Training</div>
+            <div class="timeline-org">Alexandria Poison Center, El Miri Hospital</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-title">Hospital Pharmacy — TPN &amp; Drug Therapy Review</div>
+            <div class="timeline-org">Al-Andalusia Hospitals</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:1.5rem;" class="fade-up">Certifications</div>
+        <div class="timeline fade-up delay-2">
+          <div class="timeline-item">
+            <div class="timeline-year">In Progress</div>
+            <div class="timeline-title">Medical Writing Specialization</div>
+            <div class="timeline-org">Coursera</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">Introduction to Clinical Research Principles</div>
+            <div class="timeline-org">Coursera</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">Writing in the Sciences</div>
+            <div class="timeline-org">Coursera</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">Microsoft Power BI: Data Analysis &amp; Visualization</div>
+            <div class="timeline-org">Andalusia</div>
+          </div>
+        </div>
+
+        <div class="fade-up delay-3">
+          <div class="label" style="margin:2rem 0 1rem;">Skills</div>
+          <div class="skills-cloud">
+            <span class="skill-tag">Evidence-Based Medicine</span>
+            <span class="skill-tag">Arabic Medical Writing</span>
+            <span class="skill-tag">SEO Content Strategy</span>
+            <span class="skill-tag">Patient Education</span>
+            <span class="skill-tag">Pharmacology</span>
+            <span class="skill-tag">Pharma Product Copy</span>
+            <span class="skill-tag">HCP Communications</span>
+            <span class="skill-tag">Clinical Research</span>
+            <span class="skill-tag">Brand Voice</span>
+            <span class="skill-tag">Fact-Checking</span>
+            <span class="skill-tag">Medical Literature Review</span>
+            <span class="skill-tag">Wound Care</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+============================================================ -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner" style="max-width:680px; margin:0 auto; text-align:center;">
+      <div class="label fade-up">Let's work together</div>
+      <h2 class="display-lg fade-up delay-1">
+        Ready for content your<br>audience actually <em>trusts?</em>
+      </h2>
+      <p class="lead fade-up delay-2">
+        Tell me what you need — a blog post, an Arabic SEO article, a patient guide, or a full content brief. I'll respond within 24 hours and we can take it from there. No long forms, no unnecessary steps.
+      </p>
+
+      <div class="cta-actions fade-up delay-3">
+        <a href="mailto:merihanewees@gmail.com" class="btn btn-cta-primary">✉ Email Me Now</a>
+        <a href="https://linkedin.com/in/merihan-ewees-24bb2b285" target="_blank" rel="noopener" class="btn btn-cta-outline">Connect on LinkedIn ↗</a>
+      </div>
+
+      <div class="cta-process fade-up delay-4">
+        <div class="process-step">
+          <div class="step-num">Step 01</div>
+          <h4>You Reach Out</h4>
+          <p>Share your topic, audience, and goals. No long intake forms needed.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">Step 02</div>
+          <h4>I Send a Quote</h4>
+          <p>Clear pricing, timeline, and scope — no surprises.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">Step 03</div>
+          <h4>I Write &amp; Deliver</h4>
+          <p>Researched, fact-checked, and ready to publish. Revisions included.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">Step 04</div>
+          <h4>You Publish with Confidence</h4>
+          <p>Content your audience trusts and your brand is proud of.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 Merihan Emad Ewees — Medical Content Writer · Pharmacist · Arabic &amp; English</div>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="mailto:merihanewees@gmail.com">merihanewees@gmail.com</a>
+        <a href="https://linkedin.com/in/merihan-ewees-24bb2b285" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Ticker duplication for seamless loop
+  const track = document.getElementById('ticker');
+  if (track) {
+    track.innerHTML += track.innerHTML;
+  }
+</script>
+
+</body>
+</html>
